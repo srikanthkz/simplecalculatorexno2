@@ -1,0 +1,43 @@
+print("Simple Calculator (task 2)")
+
+while True:
+    print("\n Options:")
+    print("1. sum")
+    print("2. difference")
+    print("3. Multiplication")
+    print("4. division")
+    print("5. Exit")
+
+    choice = input("\n Enter your choice : ")
+
+    if choice == '5':
+        print("Goodbye!")
+        break
+
+    if choice in ['1', '2', '3', '4']:
+        try:
+            num1 = float(input("\n Enter first number to perform calculation: "))
+            num2 = float(input("Enter second number to perform calculation : "))
+        except ValueError:
+            print("Invalid input! Please enter numeric values to continue")
+            continue
+
+        if choice == '1':
+            result = num1 + num2
+            operation = "sum"
+        elif choice == '2':
+            result = num1 - num2
+            operation = "difference"
+        elif choice == '3':
+            result = num1 * num2
+            operation = "multiplication"
+        elif choice == '4':
+            if num2 == 0:
+                print("Error! Division by zero")
+                continue
+            result = num1 / num2
+            operation = "division"
+        
+        print(f"\nThe result of {operation} is: {result}")
+    else:
+        print("Invalid choice !!!. Please enter a number between 1 and 5.")
